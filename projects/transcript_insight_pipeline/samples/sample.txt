@@ -1,0 +1,5 @@
+Facilitator: Walk me through how you decided to switch tools last quarter.
+
+P1: Honestly we waited weeks for IT to open the port. By then the team had already built a shadow spreadsheet because we could not trust the nightly export.
+
+P2: I always duplicate the numbers before I submit. Once the dashboard showed green but finance came back with a different total — that stuck with us.

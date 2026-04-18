@@ -1,0 +1,5 @@
+order_id,crop,sku,qty,ship_date,region,notes
+1001,maize,FERT-N-50KG,40,2026-03-12,east,Pre-plant nitrogen for rain-fed plot A
+1002,maize,IRR-DRIP-KIT,2,2026-03-20,east,Drip kit for supplemental irrigation
+1003,beans,SEED-PRO-25KG,10,2026-04-01,west,Short-season variety for intercrop trial
+1004,maize,FERT-N-50KG,20,2026-04-05,east,Side-dress after knee-high stage

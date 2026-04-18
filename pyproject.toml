@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["projects"]
+
+[project]
+name = "ai-automation-labs"
+version = "0.1.0"
+description = "Hands-on labs: DSPy, RAG, MCP, loan workflow API, transcript extraction."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "dspy-ai>=2.5",
+  "mcp>=1.2",
+  "fastapi>=0.115",
+  "uvicorn[standard]>=0.32",
+  "pandas>=2.2",
+  "pydantic>=2",
+  "rank-bm25>=0.2.2",
+  "httpx>=0.27",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "ruff>=0.8"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"

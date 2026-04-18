@@ -1,0 +1,14 @@
+[
+  {
+    "id": "t1",
+    "text": "Production checkout is down since 09:00 UTC. Urgent — customers cannot pay."
+  },
+  {
+    "id": "t2",
+    "text": "Could you add CSV export to the loan officer dashboard? Not blocking."
+  },
+  {
+    "id": "t3",
+    "text": "My invoice for March shows the wrong tax rate. Please correct before close."
+  }
+]
