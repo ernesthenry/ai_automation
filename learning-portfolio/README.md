@@ -4,7 +4,9 @@ Use this folder as a home for repos or notes while you work through the projects
 
 **Runnable code** now lives in the repository root: `projects/` (DSPy classifier, BM25 RAG API, MCP server, transcript extraction, loan workflow API, rapid brief). Run `python scripts/smoke_test.py` after `pip install -e .`.
 
-The full table with milestones and difficulty lives in the Cursor Canvas:
+**GitHub-readable interview and lab content:** [CANVASES.md](../CANVASES.md)
+
+The full interactive table (same content) also lives in the Cursor Canvas:
 
 `~/.cursor/projects/Users-Zhuanz-ai-automation/canvases/hands-on-automation-learning-portfolio.canvas.tsx`
 

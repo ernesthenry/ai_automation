@@ -2,6 +2,8 @@
 
 Local training repo: DSPy classification, BM25 RAG over CSV plus playbooks, MCP runbook server, transcript-to-schema extraction, and a loan lifecycle API. Every service runs **without API keys** using `USE_MOCK_AI=1` (default). Set `OPENAI_API_KEY` and `USE_MOCK_AI=0` to exercise real DSPy calls.
 
+**Interview and learning canvases (GitHub-friendly):** open **[CANVASES.md](CANVASES.md)** for the same content as the Cursor canvases in rendered Markdown. Raw `.canvas.tsx` mirrors live under [`canvases/`](canvases/).
+
 ## Setup
 
 ```bash

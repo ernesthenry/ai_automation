@@ -1,8 +1,10 @@
 # Cursor canvases (mirrored for GitHub)
 
-These `.canvas.tsx` files are **copies** of the Cursor IDE canvases. They import `cursor/canvas`, so they only **compile inside Cursor** when placed under the managed `canvases/` path in your Cursor project. In this repo they serve as a **readable backup** on GitHub (open the file on github.com to read the interview text in JSX).
+**Read this material on GitHub as Markdown:** [**CANVASES.md**](../CANVASES.md) (renders tables, headings, and checklists in the browser).
 
-Source of truth while editing in Cursor:
+These `.canvas.tsx` files are **copies** of the Cursor IDE canvases. They import `cursor/canvas`, so they only **compile inside Cursor** when opened from the managed Cursor `canvases/` directory. This folder keeps them in git for diffing and backup; for sharing or reading in the GitHub UI, prefer **CANVASES.md** at the repo root.
+
+Source of truth while editing the live interactive canvas in Cursor:
 
 `~/.cursor/projects/Users-Zhuanz-ai-automation/canvases/`
 
