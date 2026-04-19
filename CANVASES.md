@@ -1,8 +1,8 @@
-# Canvas content (GitHub-readable)
+# Interview & learning prep (Markdown)
 
-This file mirrors the Cursor canvas interview prep and learning portfolio in **Markdown** so it renders cleanly on GitHub. The interactive Cursor canvases (with checklists and theme tokens) live under [`canvases/`](canvases/) as `.canvas.tsx` sources.
+Single **readable** document for GitHub and any editor: Pair / Tunga, STAR stories, and lab ideas. There are **no** `.canvas.tsx` sources in this repo anymore—edit this file directly.
 
-**Preparation hub:** if you want one index page that links here, the STAR/lab sections, runnable code, and canvas filenames, use **[docs/PREPARATION.md](docs/PREPARATION.md)**.
+**Index:** **[docs/PREPARATION.md](docs/PREPARATION.md)** links here, runnable `projects/` demos, and the short `canvases/README.md` pointer.
 
 **Table of contents**
 
@@ -117,7 +117,7 @@ Pair mentioned DSPy. Position it as structured prompt and pipeline optimization 
 - Which incidents taught you the most about automation guardrails?
 - How do you balance sales-led MVPs with long-term platform consistency?
 
-### Prep checklist (tick on GitHub by editing, or use Cursor canvas for interactive state)
+### Prep checklist (tick boxes in GitHub by editing the file, or copy into your notes app)
 
 - [ ] Confirm **calendar time** for the rescheduled Tunga / Pair call (thread said "minutes from now" — verify **now** in your calendar app)
 - [ ] Skim [pairsoftware.io](https://www.pairsoftware.io/): product, customers, tone (**3 bullets** to say aloud)

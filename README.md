@@ -2,9 +2,9 @@
 
 Local training repo: **real** DSPy + OpenAI classification and extraction, BM25 RAG over CSV plus playbooks, MCP demo server, and an in-memory loan lifecycle API. Set **`OPENAI_API_KEY`** for any module that calls the LLM (classifier, transcript pipeline, rapid brief). See **[docs/CODEBASE.md](docs/CODEBASE.md)** for a file-by-file map.
 
-**Preparation guides:** start at **[docs/PREPARATION.md](docs/PREPARATION.md)** (hub linking Tunga/Pair, STAR, labs, and canvases).
+**Preparation guides:** start at **[docs/PREPARATION.md](docs/PREPARATION.md)** (hub linking Tunga/Pair, STAR, labs, and runnable demos).
 
-**Interview and learning content (GitHub-friendly Markdown):** **[CANVASES.md](CANVASES.md)**. Raw `.canvas.tsx` mirrors live under [`canvases/`](canvases/).
+**Interview and learning content (Markdown):** **[CANVASES.md](CANVASES.md)**. See also [`canvases/README.md`](canvases/README.md) for a short pointer.
 
 ## Setup
 

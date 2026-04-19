@@ -8,10 +8,11 @@ Use this folder as a home for repos or notes while you work through the projects
 |-----|------|
 | **Hub (start here)** | [docs/PREPARATION.md](../docs/PREPARATION.md) |
 | Full Markdown (Tunga thread, Pair brief, STAR, labs) | [CANVASES.md](../CANVASES.md) |
+| Prep folder pointer | [canvases/README.md](../canvases/README.md) |
 
 **Runnable code** lives in the repo root: `projects/` (DSPy classifier, BM25 RAG API, MCP server, transcript extraction, loan workflow API, rapid brief). Run `python scripts/smoke_test.py` after `pip install -e .`.
 
-**Cursor canvases** (open in IDE beside chat): `canvases/*.canvas.tsx` in this repo, or under `~/.cursor/projects/Users-Zhuanz-ai-automation/canvases/` — see the hub doc for which file is which.
+Interview prep is **Markdown only** (`CANVASES.md`); there are no `.canvas.tsx` files in this repository.
 
 ## Quick reference links
 
