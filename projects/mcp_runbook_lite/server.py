@@ -1,3 +1,5 @@
+"""MCP stdio server: synthetic log lines, trace JSON, and placeholder URLs (no AWS credentials)."""
+
 from __future__ import annotations
 
 import json
@@ -7,13 +9,12 @@ from mcp.server.fastmcp import FastMCP
 
 mcp = FastMCP(
     "runbook-lite",
-    instructions="Read-only mock tools. Safe for demos; no real cloud access.",
+    instructions="Demo tools: sample logs/traces and placeholder dashboard links.",
 )
 
 
 @mcp.tool()
 def list_recent_errors(service: str, limit: int = 5) -> str:
-    """List synthetic recent errors for a logical service name."""
     now = datetime.now(tz=UTC)
     lines = []
     for i in range(min(limit, 5)):
@@ -26,7 +27,6 @@ def list_recent_errors(service: str, limit: int = 5) -> str:
 
 @mcp.tool()
 def get_trace_id(trace_id: str) -> str:
-    """Return a canned trace summary for a trace id string."""
     payload = {
         "trace_id": trace_id,
         "spans": [
@@ -41,7 +41,6 @@ def get_trace_id(trace_id: str) -> str:
 
 @mcp.tool()
 def link_to_dashboard(service: str) -> str:
-    """Return a placeholder dashboard URL for a service."""
     safe = service.replace("/", "-")
     return f"https://example.invalid/dashboards/{safe}"
 

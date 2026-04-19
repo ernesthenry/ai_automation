@@ -22,8 +22,20 @@ import {
 
 const DEFAULT_PREP_TODOS: TodoItem[] = [
   {
+    id: "calendar",
+    content:
+      "Confirm calendar time for rescheduled Tunga / Pair call (thread said minutes from now)",
+    status: "pending",
+  },
+  {
     id: "site",
     content: "Skim pairsoftware.io: product, customers, tone (3 bullets)",
+    status: "pending",
+  },
+  {
+    id: "brief",
+    content:
+      "Memorize Pair brief: 4 work streams, stack (AWS MySQL DSPy), 3 prep themes from Tunga",
     status: "pending",
   },
   {
@@ -44,6 +56,11 @@ const DEFAULT_PREP_TODOS: TodoItem[] = [
   {
     id: "questions",
     content: "Pick 4 questions from bottom section to ask them",
+    status: "pending",
+  },
+  {
+    id: "followup",
+    content: "After call: keep Virtuous posted (short thank-you + one-line outcome)",
     status: "pending",
   },
 ];
@@ -69,6 +86,58 @@ export default function PairSoftwareAiAutomationPortfolio() {
           <Pill>Senior AI / full stack</Pill>
           <Pill>BPOSeats, Headstarter, CIM</Pill>
         </Row>
+      </Stack>
+
+      <Stack gap={12}>
+        <H2>Tunga logistics and Pair client brief</H2>
+        <Card>
+          <CardHeader trailing={<Pill>Slack</Pill>}>Virtuous Tunga thread</CardHeader>
+          <CardBody>
+            <Stack gap={8}>
+              <Text>
+                She will keep you posted; call was rescheduled once, confirm the
+                slot in your calendar app so you are not late. Reply on the same
+                thread when times shift. You acknowledged with Okay, Alright, and
+                Thank you for sharing, keep that tone professional and brief.
+              </Text>
+              <Link href="https://www.pairsoftware.io/">pairsoftware.io</Link>
+            </Stack>
+          </CardBody>
+        </Card>
+        <Card>
+          <CardHeader trailing={<Pill tone="info">Ground truth</Pill>}>
+            What Pair told Tunga to pass on
+          </CardHeader>
+          <CardBody>
+            <Stack gap={8}>
+              <Text weight="semibold">Who they are</Text>
+              <Text tone="secondary">
+                Fast SaaS, automation-first engineering. Sales prototypes with
+                clients; MVPs become production microservices. AWS staging before
+                live. They automate manual work, including their own engineering
+                process.
+              </Text>
+              <Text weight="semibold">What you would work on</Text>
+              <Text tone="secondary">
+                Console auto-registration for microservices; self-healing bug
+                system (pull, categorise, auto-fix where possible); MVP to
+                production pipeline on AWS; automated QA, possibly LLM test
+                generation.
+              </Text>
+              <Text weight="semibold">Stack and values</Text>
+              <Text tone="secondary">
+                AWS, microservices, MySQL, AI and LLMs, DSPy emerging. Ship over
+                perfection, independent thinking, practical outcomes. No full spec,
+                you turn ambiguity into working systems.
+              </Text>
+              <Text weight="semibold">Prepare to discuss</Text>
+              <Text tone="secondary">
+                Automation that removed repetitive work; unclear requirements you
+                still shipped; AI-assisted and agentic workflows.
+              </Text>
+            </Stack>
+          </CardBody>
+        </Card>
       </Stack>
 
       <Grid columns={3} gap={16}>

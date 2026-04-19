@@ -1,1 +1,1 @@
-"""Transcript to structured behavioural insights (mock or DSPy)."""
+"""Transcript to structured behavioural insights via DSPy + OpenAI."""

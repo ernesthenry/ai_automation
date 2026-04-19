@@ -1,3 +1,5 @@
+"""CLI: classify each row in ``samples.json`` (requires ``OPENAI_API_KEY``)."""
+
 from __future__ import annotations
 
 import json

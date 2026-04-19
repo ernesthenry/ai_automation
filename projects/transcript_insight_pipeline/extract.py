@@ -1,66 +1,49 @@
+"""Transcript → structured InsightReport via DSPy; strips markdown code fences if the model adds them."""
+
 from __future__ import annotations
 
 import json
-import os
-import re
 
-from .schema import InsightReport, KeyQuote
+import dspy
+from dspy import InputField, OutputField, Predict, Signature
 
+from labs_common.openai_env import OPENAI_DSPY_MODEL, require_openai_api_key
 
-def use_mock() -> bool:
-    if os.environ.get("USE_MOCK_AI", "1").lower() in ("1", "true", "yes"):
-        return True
-    return not os.environ.get("OPENAI_API_KEY", "").strip()
+from .schema import InsightReport
 
 
-def mock_extract(transcript: str) -> InsightReport:
-    sentences = [s.strip() for s in re.split(r"(?<=[.!?])\s+", transcript) if s.strip()]
-    quotes: list[KeyQuote] = []
-    for i, s in enumerate(sentences[:3]):
-        quotes.append(
-            KeyQuote(
-                speaker="P1" if i % 2 == 0 else "P2",
-                quote=s[:220],
-                framework_code="HABIT-LOOP" if "always" in s.lower() else "FRICTION",
-            )
-        )
-    themes = []
-    low = transcript.lower()
-    if "wait" in low or "slow" in low:
-        themes.append("Process friction")
-    if "trust" in low or "worried" in low:
-        themes.append("Trust and risk")
-    if not themes:
-        themes.append("General motivation")
-    return InsightReport(
-        themes=themes,
-        key_quotes=quotes,
-        behavioural_summary="Mock extraction: prioritize validating quotes against the audio or source transcript.",
-        limitations="Heuristic mock; no speaker diarization or audio.",
+class ExtractSig(Signature):
+    """Model returns JSON as a string; we parse and validate with Pydantic."""
+
+    transcript: str = InputField()
+    structured_json: str = OutputField(
+        desc=(
+            "Valid JSON only, no markdown fences, matching keys: themes (string[]), "
+            "key_quotes (array of objects with speaker, quote, framework_code), "
+            "behavioural_summary (string), limitations (string)"
+        ),
     )
 
 
-def dspy_extract(transcript: str) -> InsightReport:
-    import dspy
-    from dspy import InputField, OutputField, Predict, Signature
-
-    class ExtractSig(Signature):
-        """Extract structured behavioural research notes from an interview transcript."""
-
-        transcript: str = InputField()
-        structured_json: str = OutputField(
-            desc='Valid JSON matching keys: themes (string[]), key_quotes (array of {speaker, quote, framework_code}), behavioural_summary (string), limitations (string)',
-        )
-
-    lm = dspy.LM("openai/gpt-4o-mini", api_key=os.environ["OPENAI_API_KEY"])
-    dspy.configure(lm=lm)
-    pred = Predict(ExtractSig)
-    raw = pred(transcript=transcript).structured_json
-    data = json.loads(raw)
-    return InsightReport.model_validate(data)
+def _parse_llm_json(raw: str) -> dict:
+    """Strip optional markdown fences (models often add them) then ``json.loads``."""
+    text = raw.strip()
+    if text.startswith("```"):
+        lines = text.splitlines()
+        if lines:
+            lines = lines[1:]
+        if lines and lines[-1].strip().startswith("```"):
+            lines = lines[:-1]
+        text = "\n".join(lines).strip()
+    return json.loads(text)
 
 
 def extract(transcript: str) -> InsightReport:
-    if use_mock():
-        return mock_extract(transcript)
-    return dspy_extract(transcript)
+    """LLM extraction + schema validation. Raises on bad JSON or validation errors."""
+    api_key = require_openai_api_key()
+    lm = dspy.LM(OPENAI_DSPY_MODEL, api_key=api_key)
+    dspy.configure(lm=lm)
+    pred = Predict(ExtractSig)
+    raw = pred(transcript=transcript).structured_json
+    data = _parse_llm_json(raw)
+    return InsightReport.model_validate(data)

@@ -2,15 +2,16 @@
 
 Use this folder as a home for repos or notes while you work through the projects.
 
-**Runnable code** now lives in the repository root: `projects/` (DSPy classifier, BM25 RAG API, MCP server, transcript extraction, loan workflow API, rapid brief). Run `python scripts/smoke_test.py` after `pip install -e .`.
+## Preparation guides (interview + client)
 
-**GitHub-readable interview and lab content:** [CANVASES.md](../CANVASES.md)
+| Doc | Link |
+|-----|------|
+| **Hub (start here)** | [docs/PREPARATION.md](../docs/PREPARATION.md) |
+| Full Markdown (Tunga thread, Pair brief, STAR, labs) | [CANVASES.md](../CANVASES.md) |
 
-The full interactive table (same content) also lives in the Cursor Canvas:
+**Runnable code** lives in the repo root: `projects/` (DSPy classifier, BM25 RAG API, MCP server, transcript extraction, loan workflow API, rapid brief). Run `python scripts/smoke_test.py` after `pip install -e .`.
 
-`~/.cursor/projects/Users-Zhuanz-ai-automation/canvases/hands-on-automation-learning-portfolio.canvas.tsx`
-
-Open that file in Cursor to browse beside the chat.
+**Cursor canvases** (open in IDE beside chat): `canvases/*.canvas.tsx` in this repo, or under `~/.cursor/projects/Users-Zhuanz-ai-automation/canvases/` — see the hub doc for which file is which.
 
 ## Quick reference links
 

@@ -1,1 +1,1 @@
-"""DSPy (or mock) support ticket classification."""
+"""DSPy + OpenAI support ticket classification (live inference only)."""

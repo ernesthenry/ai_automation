@@ -1,8 +1,10 @@
 # AI automation labs (runnable projects)
 
-Local training repo: DSPy classification, BM25 RAG over CSV plus playbooks, MCP runbook server, transcript-to-schema extraction, and a loan lifecycle API. Every service runs **without API keys** using `USE_MOCK_AI=1` (default). Set `OPENAI_API_KEY` and `USE_MOCK_AI=0` to exercise real DSPy calls.
+Local training repo: **real** DSPy + OpenAI classification and extraction, BM25 RAG over CSV plus playbooks, MCP demo server, and an in-memory loan lifecycle API. Set **`OPENAI_API_KEY`** for any module that calls the LLM (classifier, transcript pipeline, rapid brief). See **[docs/CODEBASE.md](docs/CODEBASE.md)** for a file-by-file map.
 
-**Interview and learning canvases (GitHub-friendly):** open **[CANVASES.md](CANVASES.md)** for the same content as the Cursor canvases in rendered Markdown. Raw `.canvas.tsx` mirrors live under [`canvases/`](canvases/).
+**Preparation guides:** start at **[docs/PREPARATION.md](docs/PREPARATION.md)** (hub linking Tunga/Pair, STAR, labs, and canvases).
+
+**Interview and learning content (GitHub-friendly Markdown):** **[CANVASES.md](CANVASES.md)**. Raw `.canvas.tsx` mirrors live under [`canvases/`](canvases/).
 
 ## Setup
 
@@ -16,7 +18,7 @@ export DSPY_CACHE_DIR="$(pwd)/.dspy_cache"
 mkdir -p .dspy_cache
 ```
 
-## Smoke test (no network)
+## Smoke test
 
 ```bash
 export PYTHONPATH="$(pwd)/projects"
@@ -24,16 +26,18 @@ export DSPY_CACHE_DIR="$(pwd)/.dspy_cache"
 python scripts/smoke_test.py
 ```
 
+Runs **BM25 RAG + loan API** without keys. If `OPENAI_API_KEY` is set, also runs **live OpenAI** checks (needs network).
+
 ## Projects
 
 | Directory | What it is | Run |
 |-----------|------------|-----|
 | `projects/dspy_ticket_classifier` | DSPy ticket to category, priority, summary | `python -m dspy_ticket_classifier` |
 | `projects/rag_operational_domain` | BM25 RAG: ERP-like CSV plus agronomy playbooks | `python -m rag_operational_domain` then `curl` (see below) |
-| `projects/mcp_runbook_lite` | MCP tools for mock errors and dashboards | `python -m mcp_runbook_lite` (stdio; attach from Cursor MCP config) |
+| `projects/mcp_runbook_lite` | MCP tools with synthetic log/trace samples (no AWS) | `python -m mcp_runbook_lite` (stdio; attach from Cursor MCP config) |
 | `projects/transcript_insight_pipeline` | Qualitative transcript to structured JSON | `python -m transcript_insight_pipeline` |
 | `projects/loan_workflow_mock` | Loan states plus immutable audit log | `python -m loan_workflow_mock` |
-| `projects/rapid_brief` | Form to executive brief (mock or LLM) | `python -m rapid_brief` |
+| `projects/rapid_brief` | Form to executive brief via DSPy + OpenAI | `python -m rapid_brief` |
 
 ### RAG API quick curl
 
@@ -53,16 +57,15 @@ Add an MCP server entry pointing to:
 - Args: `-m`, `mcp_runbook_lite`
 - Cwd: `/path/to/ai_automation` with `PYTHONPATH=projects` in env (or set cwd to `projects` and use `python -m mcp_runbook_lite` from repo root in args).
 
-## Real LLM mode
+## OpenAI + DSPy
 
 ```bash
 export OPENAI_API_KEY=sk-...
-export USE_MOCK_AI=0
 export PYTHONPATH="$(pwd)/projects"
 python -m dspy_ticket_classifier
 ```
 
-DSPy is configured with `dspy.LM("openai/gpt-4o-mini", ...)` in each module that calls the model.
+Default model id is `openai/gpt-4o-mini` (see `projects/labs_common/openai_env.py`).
 
 ## Docker (AWS-ready packaging)
 

@@ -2,9 +2,11 @@
 
 This file mirrors the Cursor canvas interview prep and learning portfolio in **Markdown** so it renders cleanly on GitHub. The interactive Cursor canvases (with checklists and theme tokens) live under [`canvases/`](canvases/) as `.canvas.tsx` sources.
 
+**Preparation hub:** if you want one index page that links here, the STAR/lab sections, runnable code, and canvas filenames, use **[docs/PREPARATION.md](docs/PREPARATION.md)**.
+
 **Table of contents**
 
-1. [AI automation portfolio (interview prep)](#1-ai-automation-portfolio-interview-prep)
+1. [AI automation portfolio (interview prep)](#1-ai-automation-portfolio-interview-prep) — includes Tunga thread + Pair client brief
 2. [STAR stories](#2-star-stories)
 3. [Hands-on automation learning portfolio](#3-hands-on-automation-learning-portfolio)
 
@@ -12,7 +14,44 @@ This file mirrors the Cursor canvas interview prep and learning portfolio in **M
 
 ## 1. AI automation portfolio (interview prep)
 
-Interview prep for automation, microservices, AWS staging, and AI-assisted engineering. Map shipped work to their problems before the call.
+Interview prep for **Pair Software** (via **Tunga**): automation, microservices, AWS staging, and AI-assisted engineering. Map shipped work to their problems before the call.
+
+### Recruiter thread (Virtuous Tunga, Slack)
+
+Keep the relationship warm and responsive; she is coordinating the client.
+
+| When | Who | Note |
+|------|-----|------|
+| (earlier) | You | "Okay" — acknowledge updates quickly |
+| | Virtuous | "I'll keep you posted" — expect follow-ups from her |
+| | Virtuous | Call **rescheduled** ("minutes from now" in thread — confirm **current** time in your calendar so you are not late) |
+| | You | "Alright" / "Thank you for sharing" — short confirmations are fine |
+| 1:22 PM | Virtuous | [pairsoftware.io](https://www.pairsoftware.io/) + full client brief below |
+
+If anything shifts again, reply on the same thread so the audit trail stays clear.
+
+### Client brief — Pair Software (from Tunga, use as ground truth)
+
+**Who they are**
+
+Fast-moving **SaaS**, **automation-first** engineering culture. **Sales** rapidly prototype with clients; once approved, **MVPs become production-ready microservices**. **Everything goes through AWS staging** before live. They build systems that **reduce manual work**, including **their own engineering process**.
+
+**What you would work on**
+
+1. **Service console automation** — how new **microservices are registered and exposed** on the internal platform console  
+2. **Self-healing bugs** — pull issues, **categorise**, **apply fixes automatically** where possible  
+3. **MVP → production pipeline** — take **rough MVP code** and **structure it for production** on **AWS**  
+4. **Automated QA** — across services, **potentially LLMs for test generation**
+
+**Their stack:** AWS · Microservices · **MySQL** · AI/LLMs · **DSPy** (emerging interest)
+
+**What they value:** **Shipping over perfection**, **independent thinking**, **practical outcomes**. You will **not** get a full spec — you take **ambiguous problems** and turn them into **working systems**.
+
+**They want you to think about (explicit prep list)**
+
+- Examples of **automation that removed repetitive work**  
+- How you took **rough or unclear requirements** and **shipped** something  
+- **AI-assisted development** and **agentic workflows** (experience or interest)
 
 **Tags:** Kato Ernest Henry · Senior AI / full stack · BPOSeats, Headstarter, CIM
 
@@ -80,15 +119,18 @@ Pair mentioned DSPy. Position it as structured prompt and pipeline optimization 
 
 ### Prep checklist (tick on GitHub by editing, or use Cursor canvas for interactive state)
 
-- [ ] Skim pairsoftware.io: product, customers, tone (3 bullets)
+- [ ] Confirm **calendar time** for the rescheduled Tunga / Pair call (thread said "minutes from now" — verify **now** in your calendar app)
+- [ ] Skim [pairsoftware.io](https://www.pairsoftware.io/): product, customers, tone (**3 bullets** to say aloud)
+- [ ] Memorize **their four work streams** + **stack** + **three prep themes** (automation, ambiguous reqs, agentic AI) from the brief above
 - [ ] Memorize 3 stories: AutoDoc/MCP, multi-agent, RAG triage lesson
 - [ ] Read MVP pipeline + service registry paragraphs out loud once
-- [ ] Prepare honest bridge: MySQL at scale, DSPy interest, AWS staging mental model
+- [ ] Prepare honest bridge: **MySQL**, **DSPy** interest, **AWS staging** mental model
 - [ ] Pick 4 questions from bottom section to ask them
+- [ ] After the call: **keep Virtuous posted** if you agreed to updates (short thank-you + one-line outcome)
 
 **Profile links:** [LinkedIn](https://www.linkedin.com/in/keh95/) · [GitHub](https://github.com/ernesthenry)
 
-*Tunga: align profile with AWS, microservices, automation, AI-assisted workflows.*
+*Tunga: align Tunga Works / profile with AWS, microservices, automation, AI-assisted workflows.*
 
 ---
 
